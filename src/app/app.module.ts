@@ -10,6 +10,7 @@ import { MenulateralLojavirtualComponent } from './menulateral-lojavirtual/menul
 import { ListaprodutosComponent } from './listaprodutos/listaprodutos.component';
 import { CrudprodutosComponent } from './crudprodutos/crudprodutos.component';
 import { AddprodutoComponent } from './addproduto/addproduto.component';
+import { ProdutoService } from './listaprodutos/produto.service';
 
 let routes = [
    { path : "lista_produtos", component: ListaprodutosComponent},
@@ -33,7 +34,7 @@ let routes = [
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

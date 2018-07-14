@@ -1,10 +1,12 @@
 <div *ngIf="produtos">
-  <app-painelmain-lojavirtual titulo = "Painel de Produtos" col="12" tipo="info">
-      <button type="button" class="btn btn-primary">Adicionar</button>
+  <app-painelmain-lojavirtual titulo = "Registro de Produtos" col="12" tipo="info">
+      <button type="button" class="btn btn-primary" (click)="addProduto()">Adicionar</button>
+      <br> <br>
       
       <table class="table table-hover">
         <thead>
           <tr>
+           <th class="hidden">Id</th>
             <th>Imagem</th>
             <th>Nome</th>
             <th>Descrição</th>
@@ -14,13 +16,14 @@
         </thead>
         <tbody>
           <tr *ngFor="let produto of produtos.item">
+            <td class="hidden">{{produto.id}}</td>
             <td>{{produto.imagem}}</td>
             <td>{{produto.nome}}</td>
             <td>{{produto.descricao}}</td>
             <td>{{produto.preco}}</td>             
             
-            <button type="button" class="btn btn-warning">Editar</button>
-            <button type="button" class="btn btn-danger">Excluir</button>
+            <button type="button" class="btn btn-warning" (click)="editProduto()" style="margin-top: 5px;">Editar</button>
+            <button type="button" class="btn btn-danger" (click)="deleteProduto()" style="margin-left: 20px; margin-top: 5px;">Excluir</button>
           </tr>
         </tbody>
       </table>
