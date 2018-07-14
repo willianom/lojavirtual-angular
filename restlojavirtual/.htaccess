@@ -1,0 +1,10 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+
+RewriteRule ^produto/lista_todos_produtos/$   RestController.php?view=lista_produtos [nc,qsa]
+RewriteRule ^produto/add_produtos/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([.0-9]+)/$   RestController.php?view=add_produtos&nome=$1&descricao=$2&preco=$3 [nc,qsa]
+RewriteRule ^produto/edit_produtos/([0-9]+)/([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/([.0-9]+)/$   RestController.php?view=edit_produtos&id=$1&nome=$2&descricao=$3&preco=$4 [nc,qsa]
+RewriteRule ^produto/delete_produtos/([0-9]+)/$   RestController.php?view=add_produtos&id=$1 [nc,qsa]
