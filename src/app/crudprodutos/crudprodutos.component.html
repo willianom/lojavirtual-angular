@@ -1,0 +1,28 @@
+<div *ngIf="produtos">
+  <app-painelmain-lojavirtual titulo = "Painel de Produtos" col="12" tipo="info">
+      <button type="button" class="btn btn-primary">Adicionar</button>
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of produtos.item">
+            <td>{{produto.imagem}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.preco}}</td>             
+            
+            <button type="button" class="btn btn-warning">Editar</button>
+            <button type="button" class="btn btn-danger">Excluir</button>
+          </tr>
+        </tbody>
+      </table>
+    </app-painelmain-lojavirtual>
+</div>
